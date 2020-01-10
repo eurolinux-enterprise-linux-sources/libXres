@@ -4,18 +4,18 @@
 
 Summary: X-Resource extension client library
 Name: libXres
-Version: 1.0.7
-Release: 2.1%{?gitdate:.%{gitdate}git%{gitversion}}%{?dist}
+Version: 1.2.0
+Release: 1%{?gitdate:.%{gitdate}git%{gitversion}}%{?dist}
 License: MIT
 Group: System Environment/Libraries
-URL: http://www.x.org
+URL: https://www.x.org
 
 %if 0%{?gitdate}
 Source0:    %{tarball}-%{gitdate}.tar.bz2
 Source1:    make-git-snapshot.sh
 Source2:    commitid
 %else
-Source0: ftp://ftp.x.org/pub/individual/lib/%{name}-%{version}.tar.bz2
+Source0: https://www.x.org/pub/individual/lib/%{name}-%{version}.tar.bz2
 %endif
 
 Requires: libX11 >= 1.5.99.902
@@ -74,6 +74,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man3/*.3*
 
 %changelog
+* Tue Apr 24 2018 Adam Jackson <ajax@redhat.com> - 1.2.0-1
+- libXres 1.2.0
+
 * Wed Feb 12 2014 Adam Jackson <ajax@redhat.com> 1.0.7-2.1
 - Mass rebuild
 
